@@ -16,8 +16,13 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
+		// Getting errors when I add one item to cart, then click 'Cart' or if I just add two items to cart. So testing outputs
+		console.log('The item that is about to be added to cart is:', item);
 		// add the given item to the cart
-		setCart(...cart, item);
+		setCart([...cart, item]);
+		console.log('Current cart is now:', cart);
+		// Fixed the bug. I apparently forgot to wrap the spread and the item in [].
+
 	};
 
 	return (
